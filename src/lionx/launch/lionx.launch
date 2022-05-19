@@ -1,0 +1,22 @@
+<launch>
+    
+    <arg name="lidar_topic" default="/livox/lidar "/>
+    <arg name="lidar_box_topic" default="/detected_bounding_boxs"/>
+    <arg name="work_Path" default="$(find lionx)/Log"/>
+
+      <node pkg="lionx" type="lionx_node" name="lionx_node" output="screen">
+
+        <param name="lidar_topic" value="$(arg lidar_topic)"/>
+        <param name="lidar_box_topic" value="$(arg lidar_box_topic)"/>
+        <param name="WORK_SPACE_PATH" value="$(arg work_Path)"/>
+
+        
+
+    </node>
+        <!-- <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find lionx)/cfg/rviz.rviz"/> -->
+        
+        
+
+<!-- <include file="$(find ur_description)/launch/ur5_upload_dh_gripper.launch"/> -->
+
+</launch>
